@@ -1,0 +1,94 @@
+/* .image-frame-cropper {
+    text-align: center;
+  }
+  
+  .upload-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .frame-size-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .frame-size-section li {
+    display: inline;
+    margin: 10px;
+  }
+  
+  .frame-size-section button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .crop-section button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .result-section img {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+   */
+
+.image-frame-cropper {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.frame-size-section {
+  margin-bottom: 20px;
+}
+
+.frame-size-category {
+  margin-bottom: 20px;
+}
+
+.frame-size-category h3 {
+  margin-bottom: 10px;
+}
+
+.frame-size-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.frame-size-item {
+  margin-bottom: 10px;
+}
+
+.frame-size-item button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.frame-size-item button:hover {
+  background-color: #0056b3;
+}
+
+.crop-section {
+  margin-bottom: 20px;
+}
+
+.result-section {
+  margin-top: 20px;
+}

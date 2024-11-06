@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Local development logs
+*.log
+*.tsbuildinfo
+
+# Build outputs
+build/
+dist/
+
+# IDE/editor-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Docker-specific files
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# macOS M1 specific exclusions
+*.swp
