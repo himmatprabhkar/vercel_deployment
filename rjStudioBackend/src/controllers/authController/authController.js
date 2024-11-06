@@ -91,26 +91,20 @@ exports.uploadFile = async (req, res) => {
       return res.status(400).json({ error: "No file uploaded" });
     }
 
-    console.log("req.filereq.filereq.file", req.file);
+    console.log("req.file:", req.file);
 
-    const { originalname, path, mimetype, encoding } = req.file;
+    const { originalname, buffer, mimetype } = req.file;
 
-    const url = await uploadImageToS3(path, originalname, mimetype, encoding);
-
-    const updatedDocument = await Documents.create({
-      userid: "6641a034a6347324ddc62883",
-      documents: [url],
-    });
-
-    console.log("Document updated successfully:", updatedDocument);
+    // Use buffer instead of path
+    const url = await uploadImageToS3(buffer, originalname, mimetype);
 
     res.status(200).json({ message: "File uploaded successfully", url });
   } catch (err) {
     console.error("Error:", err);
-
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
 
 exports.makePaymaneMethod1 = async (req, res) => {
   const { products } = req.body;

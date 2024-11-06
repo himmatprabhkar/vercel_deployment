@@ -1,4 +1,3 @@
-const fs = require("fs");
 const AWS = require("aws-sdk");
 require("dotenv").config();
 
@@ -11,14 +10,11 @@ AWS.config.region = process.env.REGION;
 
 const s3 = new AWS.S3();
 
-function uploadImageToS3(filePath, fileName, contentType) {
-
-  const fileContent = fs.readFileSync(filePath);
-
+function uploadImageToS3(fileBuffer, fileName, contentType) {
   const params = {
     Bucket: process.env.AWS_BUCKET_NAME,
     Key: fileName,
-    Body: fileContent,
+    Body: fileBuffer,  // Directly use the buffer
     ContentType: contentType,
     ACL: "public-read",
   };
