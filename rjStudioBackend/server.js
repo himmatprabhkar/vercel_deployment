@@ -20,7 +20,7 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
-app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Allow preflight requests for all routes
 
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
