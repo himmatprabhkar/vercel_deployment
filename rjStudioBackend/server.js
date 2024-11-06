@@ -19,6 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(helmet());
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
   console.log("this is hitting");
   res.send("This is rooot");
