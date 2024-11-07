@@ -15,9 +15,8 @@ const app = express();
 
 app.use(express.json());
 const corsOptions = {
-  origin: 'https://vercel-deployment-client-brown.vercel.app/', // This allows all origins
+  origin: 'https://vercel-deployment-client-brown.vercel.app', // This allows all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
 app.options('*', cors(corsOptions)); // Allow preflight requests for all routes
