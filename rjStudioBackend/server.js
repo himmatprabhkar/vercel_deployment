@@ -14,12 +14,19 @@ const userDetails = require("./src/routes/UserRoute/UserRoute");
 const app = express();
 
 app.use(express.json());
-const corsOptions = {
-  origin: 'https://vercel-deployment-client-brown.vercel.app', // This allows all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-};
+// const corsOptions = {
+//   origin: 'https://vercel-deployment-client-brown.vercel.app', // This allows all origins
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+// };
 
-app.options('*', cors(corsOptions)); // Allow preflight requests for all routes
+app.use(cors({
+  origin: 'https://vercel-deployment-client-brown.vercel.app',  // Replace with your frontend's URL
+  methods: 'GET, POST, PUT, DELETE',   // Allowed HTTP methods
+  allowedHeaders: 'Content-Type, Authorization'  // Allowed headers
+}));
+
+
+// app.options('*', cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
