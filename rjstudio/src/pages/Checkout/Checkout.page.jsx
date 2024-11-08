@@ -135,7 +135,7 @@ export const Checkout = () => {
               padding: '10px 20px',
               borderRadius: '3px',
             }}
-            class="select-size-btn border-1 size-btn m-auto d-block text-center p-2 w-100 rounded text-white"
+            className="select-size-btn border-1 size-btn m-auto d-block text-center p-2 w-100 rounded text-white"
           >
             Checkout
           </button>

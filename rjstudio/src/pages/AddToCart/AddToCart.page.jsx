@@ -12,13 +12,13 @@ export const AddToCart = ({ initialQuantity, price }) => {
   };
 
   const handleIncrement = () => {
-    setQuantity(quantity + 1);
+    setQuantity(prevQuantity => prevQuantity + 1);
     updateCartValue(quantity + 1);
   };
 
   const handleDecrement = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
+      setQuantity(prevQuantity => prevQuantity - 1);
       updateCartValue(quantity - 1);
     }
   };
@@ -28,7 +28,6 @@ export const AddToCart = ({ initialQuantity, price }) => {
   return (
     <div className="col-lg-5">
       <div className="mb-3">
-        {' '}
         <button
           onClick={() => dispatch(setImageStatus({ imageStatus: 4 }))}
           className="btn btn-primary"
@@ -39,12 +38,12 @@ export const AddToCart = ({ initialQuantity, price }) => {
 
       <div className="h4 fw-bold">{imageUrl.productName}</div>
       <ul>
-        {imageUrl.productDescription.split(';').map((ele) => (
-          <l1>
+        {imageUrl.productDescription.split(';').map((ele, index) => (
+          <li key={index}>
             {ele}
             <br />
             <br />
-          </l1>
+          </li>
         ))}
       </ul>
       <div className="d-flex justify-content-between">
@@ -75,14 +74,12 @@ export const AddToCart = ({ initialQuantity, price }) => {
         </div>
         <div className="total-price fw-500 h5 d-flex mb-3 gap-1 align-items-center">
           <span className="">Price</span>
-          <span class=" "> ${price * quantity}</span>
+          <span className=" "> ${price * quantity}</span>
         </div>
       </div>
       <button
-        onClick={() => {
-          dispatch(setImageStatus({ imageStatus: 6 }));
-        }}
-        class="select-size-btn border-1 size-btn m-auto d-block text-center p-2 w-100 rounded text-white"
+        onClick={() => updateCartValue(quantity)}
+        className="select-size-btn border-1 size-btn m-auto d-block text-center p-2 w-100 rounded text-white"
       >
         Add to Cart
       </button>
